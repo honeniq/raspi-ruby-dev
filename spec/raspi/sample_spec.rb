@@ -1,28 +1,25 @@
 require 'spec_helper'
 
-describe package('httpd'), :if => os[:family] == 'redhat' do
+describe package('git') do
   it { should be_installed }
 end
 
-describe package('apache2'), :if => os[:family] == 'ubuntu' do
+describe package('ruby-dev') do
   it { should be_installed }
 end
 
-describe service('httpd'), :if => os[:family] == 'redhat' do
-  it { should be_enabled }
-  it { should be_running }
+describe package('vim') do
+  it { should be_installed }
 end
 
-describe service('apache2'), :if => os[:family] == 'ubuntu' do
-  it { should be_enabled }
-  it { should be_running }
+describe package('screen') do
+  it { should be_installed }
 end
 
-describe service('org.apache.httpd'), :if => os[:family] == 'darwin' do
-  it { should be_enabled }
-  it { should be_running }
+describe package('bundler') do
+  it { should be_installed.by('gem') }
 end
 
-describe port(80) do
-  it { should be_listening }
+describe package('pry') do
+  it { should be_installed.by('gem') }
 end

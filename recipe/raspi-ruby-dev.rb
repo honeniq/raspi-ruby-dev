@@ -9,7 +9,6 @@ end
 packages = []
 packages << 'git'
 packages << 'ruby-dev'
-packages << 'rubygems'
 packages << 'vim'
 packages << 'screen'
 
