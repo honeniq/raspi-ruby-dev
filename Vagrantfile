@@ -8,4 +8,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define :raspi do |c|
     c.vm.box = "chef/ubuntu-14.04"
   end
+
+  config.vm.provision :itamae do |config|
+    # recipes(String or Array)
+    config.recipes = ['./recipe/raspi-ruby-dev.rb']
+
+    #config.json = './node.json'
+  end
 end
